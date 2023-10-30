@@ -1,0 +1,13 @@
+#!/bin/bash
+
+NAME=$(basename $(swww query | cut -d ' ' -f 8) | cut -d '.' -f 1)
+
+if [ "$NAME" == "wallpaper1" ]; then
+    swww img --transition-type random --transition-duration 2 ~/Images/wallpaper2.png
+else
+    if [ "$NAME" == "wallpaper2" ]; then
+    	swww img --transition-type random --transition-duration 2 ~/Images/wallpaper3.png
+    else
+	swww img --transition-type random --transition-duration 2 ~/Images/wallpaper1.png
+    fi
+fi
